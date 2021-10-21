@@ -1,0 +1,36 @@
+Contact Book CRUD App
+https://realpython.com/python-contact-book/
+
+Layout examples
+https://www.mfitzp.com/tutorials/layouts/
+
+=====================================
+Project Overview
+To build your contact book application, you need to organize the code into modules and packages and give your project a coherent structure. In this tutorial, you’ll use the following directories and files structure:
+
+rpcontacts_project/
+│
+├── rpcontacts/
+│   ├── __init__.py
+│   ├── views.py
+│   ├── database.py
+│   ├── main.py
+│   └── model.py
+│
+├── requirements.txt
+├── README.md
+└── rpcontacts.py
+Here’s a brief summary of the contents of your project directory:
+
+rpcontacts_project/ is the project’s root directory. It’ll contain the following files:
+requirements.txt provides the project’s requirements list.
+README.md provides general information about the project.
+rpcontacts.py provides the entry-point script to run the application.
+rpcontacts/ is a subdirectory that provides the application’s main package. It provides the following modules:
+__init__.py
+views.py
+database.py
+main.py
+model.py
+==========================================
+

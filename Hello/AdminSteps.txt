@@ -1,0 +1,88 @@
+(1) Testing the Contact Book’s Database
+>>> from contacts.database import createConnection
+
+>>> # Create a connection
+>>> createConnection("contacts.sqlite")
+True
+
+>>> # Confirm that contacts table exists
+>>> from PyQt5.QtSql import QSqlDatabase
+>>> db = QSqlDatabase.database()
+>>> db.tables()
+['contacts', 'sqlite_sequence']
+===========================================
+(2) prepare an SQL query to insert sample data into the contacts table
+>>> # Prepare a query to insert sample data
+>>> from PyQt5.QtSql import QSqlQuery
+
+>>> insertDataQuery = QSqlQuery()
+>>> 
+insertDataQuery.prepare(
+"""
+INSERT INTO contacts (
+name,
+job,
+email
+)
+VALUES (?, ?, ?)
+"""
+)
+True
+
+# (2a) Insert sample data
+>>> 
+data = [
+("Linda", "Technical Lead", "linda@example.com"),
+("Joe", "Senior Web Developer", "joe@example.com"),
+("Lara", "Project Manager", "lara@example.com"),
+("David", "Data Analyst", "david@example.com"),
+("Jane", "Senior Python Developer", "jane@example.com"),
+]
+
+>>> # (2b) Insert sample data
+>>> 
+for name, job, email in data:
+ insertDataQuery.addBindValue(name)
+ insertDataQuery.addBindValue(job)
+ insertDataQuery.addBindValue(email)
+ insertDataQuery.exec()
+
+# (2c) To confirm data insertion
+>>> query = QSqlQuery()
+>>> query.exec("SELECT name, job, email FROM contacts")
+True
+
+>>> 
+while query.next():
+ print(query.value(0), query.value(1), query.value(2))
+
+Linda Technical Lead linda@example.com
+Joe Senior Web Developer joe@example.com
+Lara Project Manager lara@example.com
+David Data Analyst david@example.com
+Jane Senior Python Developer jane@example.com
+
+insertDataQuery.exec(
+"""
+INSERT INTO contacts (
+name,
+job,
+email
+)
+VALUES ('Linda', 'Senior Web Developer', 'joe@example.com')
+"""
+)
+
+for name, job, email in data:
+ insertDataQuery = QSqlQuery()
+ strValue = "'" + name + "','" + job + "','" + email + "'"
+ stmt = """
+INSERT INTO contacts (
+name,
+job,
+email
+)
+""" + 'VALUES (' + strValue + ')'
+ insertDataQuery.exec(stmt)
+
+
