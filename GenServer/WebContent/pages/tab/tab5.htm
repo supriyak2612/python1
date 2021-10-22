@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <title>jQuery UI Tabs : Event Management</title>
+      <link href="../../js/jquery-ui.css" rel="stylesheet">
+      <script src="../../js/jquery-2.1.4.js"></script>
+      <script src="../../js/jquery-ui.js"></script>
+      <script>
+         $(function() {
+            $( "#tabs-21" ).tabs({
+               activate: function( event, ui ) {
+                  var result = $( "#result-2" ).empty();
+                  result.append( "activated" );
+               },
+               create: function( event, ui ) {
+                  var result = $( "#result-1" ).empty();
+                  result.append( "created" );
+               }
+            });
+         });
+      </script>
+      <style>
+         #tabs-21{font-size: 14px;}
+         .ui-widget-header {
+            background:#b9cd6d;
+            border: 1px solid #b9cd6d;
+            color: #FFFFFF;
+            font-weight: bold;
+         }
+         .resultarea {
+            background: #cedc98;
+            border-top: 1px solid #000000;
+            border-bottom: 1px solid #000000;
+            color: #333333;
+            font-size:14px;
+         }
+      </style>
+   </head>
+   <body>
+      <div id="tabs-21">
+         <ul>
+            <li><a href="#tabs-22">Tab 1</a></li>
+            <li><a href="#tabs-23">Tab 2</a></li>
+            <li><a href="#tabs-24">Tab 3</a></li>
+         </ul>
+         <div id="tabs-22">
+            <p>Doing what you like is Freedom. Liking what you do is Happiness. </p>
+         </div>
+         <div id="tabs-23">
+            <p>It is not the strongest of the species that survives. Nor the most intelligent that
+            survives. It is the one that is the most adaptable to change. </p>
+         </div>
+         <div id="tabs-24">
+            <p>When one door closes, another opens; but we often look so long and so regretfully
+            upon the closed door that we do not see the one which has opened for us </p>
+            <p>Learn from yesterday, live for today, hope for tomorrow. The important thing is to
+            not stop questioning </p>
+         </div>
+      </div><br>
+      <span class="resultarea" id=result-1></span><br>
+      <span class="resultarea" id=result-2></span>
+   </body>
+</html>

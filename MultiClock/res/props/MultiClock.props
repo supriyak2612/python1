@@ -1,0 +1,22 @@
+#MultiClock Options
+
+#Refresh frequency
+RefreshTime=1000
+
+#Default time zone
+DefaultZone=%%%
+
+#Maximum number of clocks allowed
+MaxClocks=20
+
+#List of other time zones
+ZoneDisplay1=JST
+ZoneDisplay2=GMT
+ZoneDisplay3=EST
+
+Alarm1=0,Daily Review,17-30,IST
+Alarm2=1,Weekly Status Meeting,10-00,EST,2
+Alarm3=2,Monthly Project Billing,15-00,IST,7
+Alarm4=3,Month Start Process,6-00,IST
+Alarm5=4,Month End Process,7-00,IST
+Alarm6=5,New Year Reminder,10-00,IST,12-31-2003

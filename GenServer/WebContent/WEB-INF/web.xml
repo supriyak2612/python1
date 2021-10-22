@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>GenServer</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+
+<!-- CRUDController SERVLET name mapped to CRUDController servlet class -->
+<servlet>
+    <servlet-name>CRUDController</servlet-name>
+    <servlet-class>com.genserv.controller.CRUDController</servlet-class>
+    <init-param> 
+      <param-name>debug</param-name>
+      <param-value>2</param-value>
+    </init-param> 
+
+    <init-param> 
+      <param-name>props_folder</param-name> 
+      <!-- param-value>/home/apache2/MACServer</param-value -->
+      <!-- param-value>D:/TestApps/MACServer</param-value -->
+      <param-value>D:/TestApps/GenServer</param-value>
+    </init-param> 
+
+    <load-on-startup>2</load-on-startup>    
+</servlet>
+
+<!-- crud URL to CRUDController servlet name -->
+<servlet-mapping>
+    <servlet-name>CRUDController</servlet-name>
+    <url-pattern>/crud</url-pattern>
+</servlet-mapping>
+
+<!-- gens URL to CRUDController servlet name -->
+    <servlet-mapping>
+          <servlet-name>CRUDController</servlet-name>
+          <url-pattern>/gens/*</url-pattern>
+    </servlet-mapping>
+
+<!-- HelloServlet SERVLET name mapped to HelloServlet servlet class -->
+<servlet>
+    <servlet-name>HelloServlet</servlet-name>
+    <servlet-class>com.genserv.controller.HelloServlet</servlet-class>
+</servlet>
+
+<!-- hello URL to HelloServlet servlet name -->
+<servlet-mapping>
+    <servlet-name>HelloServlet</servlet-name>
+    <url-pattern>/hello</url-pattern>
+</servlet-mapping>
+
+</web-app>

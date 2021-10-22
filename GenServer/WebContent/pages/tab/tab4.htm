@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <title>jQuery UI Tabs : Use of disable(index)</title>
+      <link href="../../js/jquery-ui.css" rel="stylesheet">
+      <script src="../../js/jquery-2.1.4.js"></script>
+      <script src="../../js/jquery-ui.js"></script>
+      <script>
+         $(function() {
+            $( "#tabs-17" ).tabs();
+            $( "#tabs-17" ).tabs("disable",2);
+         });
+      </script>
+      <style>
+         #tabs-17{font-size: 14px;}
+         .ui-widget-header {
+            background:#b9cd6d;
+            border: 1px solid #b9cd6d;
+            color: #FFFFFF;
+            font-weight: bold;
+         }
+      </style>
+   </head>
+   <body>
+      <div id="tabs-17">
+         <ul>
+            <li><a href="#tabs-18">Tab 1</a></li>
+            <li><a href="#tabs-19">Tab 2</a></li>
+            <li><a href="#tabs-20">Tab 3</a></li>
+         </ul>
+         <div id="tabs-18">
+            <p>Doing what you like is Freedom. Liking what you do is Happiness. </p>
+         </div>
+         <div id="tabs-19">
+            <p>It is not the strongest of the species that survives. Nor the most intelligent that
+            survives. It is the one that is the most adaptable to change. </p>
+         </div>
+         <div id="tabs-20">
+            <p>When one door closes, another opens; but we often look so long and so regretfully
+            upon the closed door that we do not see the one which has opened for us </p>
+            <p>Learn from yesterday, live for today, hope for tomorrow. The important thing is to
+            not stop questioning </p>
+         </div>
+      </div>
+   </body>
+</html>

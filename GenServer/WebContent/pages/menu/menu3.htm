@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <title>jQuery UI Menu - Focus and Collapse</title>
+      <link href="../../js/jquery-ui.css" rel="stylesheet">
+      <script src="../../js/jquery-2.1.4.js"></script>
+      <script src="../../js/jquery-ui.js"></script>
+      <!-- CSS -->
+      <style>
+         .ui-menu {
+            width: 200px;
+         }
+      </style>
+      <!-- Javascript -->
+      <script>
+         $(function() {
+            var menu = $("#menu-4").menu();
+            $( "#menu-4" ).menu("focus", null, $( "#menu-4" ).menu().find( ".ui-menu-item:last" ));
+            $(menu).mouseleave(function () {
+               menu.menu('collapseAll');
+            });
+         });
+      </script>
+   </head>
+   <body>
+      <!-- HTML -->
+      <ul id="menu-4">
+         <li><a href="#">Spring</a></li>
+         <li><a href="#">Hibernate</a></li>
+         <li><a href="#">JSF</a></li>
+         <li><a href="#">HTML5</a></li>
+         <li><a href="#">Java</a>
+            <ul>
+               <li><a href="#">Java IO</a></li>
+               <li><a href="#">Swing</a></li>
+               <li><a href="#">Jaspr Reports</a></li>
+            </ul>
+         </li>
+      </ul>
+   </body>
+</html>
