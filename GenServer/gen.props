@@ -1,9 +1,0 @@
-#driver=com.mysql.jdbc.Driver
-#url=jdbc:mysql://localhost:3306/databasename
-#user=username
-#password=xxxxxx
-
-driver=sun.jdbc.odbc.JdbcOdbcDriver
-url=jdbc:odbc:GenData
-user=#
-password=#
